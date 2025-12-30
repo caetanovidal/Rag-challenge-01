@@ -1,0 +1,37 @@
+# Python
+# Compiled source
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+*.egg-info/
+.eggs/
+
+# Environments
+.venv/
+venv/
+.env
+env/
+ENV/
+venv.bak/
+env.bak/
+
+# Distribution / build
+dist/
+build/
+wheels/
+*.whl
+
+# Testing
+.pytest_cache/
+.coverage
+
+# Editors/OS
+.DS_Store # macOS
+.vscode/ # VS Code
+.idea/ # PyCharm
+
+
+# database
+
+/chroma
