@@ -79,3 +79,7 @@ Make sure this command is executed inside the virtual environment.
 Open your browser and go to:
 
 http://localhost:8501/
+
+
+
+Inside performance you can find a excel file comparing my model against the ground truth question by question
