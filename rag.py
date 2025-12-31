@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[104]:
+# In[1]:
 
 
 from dotenv import load_dotenv
@@ -29,15 +29,11 @@ load_dotenv()
 
 # ## Transfer notebook to python
 
-# In[105]:
-
-
-#get_ipython().system('jupyter nbconvert --to script rag.ipynb')
-
+# In[ ]:
 
 # ### Indexing
 
-# In[106]:
+# In[ ]:
 
 
 docs = []
@@ -70,7 +66,7 @@ print(Counter(doc.metadata["doc_name"] for doc in chunks))
 
 # ## Store
 
-# In[107]:
+# In[ ]:
 
 
 ids = [
@@ -125,7 +121,7 @@ vectorstore = Chroma.from_documents(
 
 # ### Routing Prompt 
 
-# In[108]:
+# In[ ]:
 
 
 ROUTING_PROMPT = """You are a routing agent for a benefits Q&A system.
@@ -186,7 +182,7 @@ def route_query(query: str) -> str:
 
 # ### Generate
 
-# In[109]:
+# In[ ]:
 
 
 SYSTEM_PROMPT = """You are an expert at rewriting user questions to optimize document retrieval
@@ -231,7 +227,7 @@ def expand_query(query: str) -> list[str]:
     return queries
 
 
-# In[110]:
+# In[ ]:
 
 
 def select_top_docs_bm25(query: str, doc_filter: str, k: int = 3):
@@ -264,7 +260,7 @@ def select_top_docs_bm25(query: str, doc_filter: str, k: int = 3):
     return top_docs
 
 
-# In[111]:
+# In[ ]:
 
 
 def retrieve_multi_query(query, doc_filter, k_per_query=10):
@@ -321,7 +317,7 @@ def format_context(docs):
 
 # ### Retry if answer Not found in the document
 
-# In[112]:
+# In[ ]:
 
 
 REPHRASE_PROMPT = """You are an expert at rewriting to improve RAG document retrieval.
@@ -340,7 +336,7 @@ REPHRASE_PROMPT = """You are an expert at rewriting to improve RAG document retr
     """
 
 
-# In[113]:
+# In[ ]:
 
 
 def rewrite_query(original_query: str) -> str:
@@ -352,7 +348,7 @@ def rewrite_query(original_query: str) -> str:
     return resp.content.strip()
 
 
-# In[114]:
+# In[ ]:
 
 
 def re_generate(query: str, max_retries: int = 2) -> dict:
@@ -440,14 +436,14 @@ Question:
 
 # ### Evaluate implemetation based on the ground truth dataset and save to excel
 
-# In[115]:
+# In[ ]:
 
 
 GROUND_TRUTH_PATH = Path("performance/ground_truth.jsonl")
 OUTPUT_PATH = Path("performance/rag_evaluation.xlsx")
 
 
-# In[116]:
+# In[ ]:
 
 
 def load_ground_truth(path: Path):
@@ -516,7 +512,7 @@ def compute_groundedness(prediction: str, truth: str) -> bool:
     return p_name == t_name if p_name and t_name else False
 
 
-# In[119]:
+# In[ ]:
 
 
 def run_evaluation2():
@@ -579,7 +575,7 @@ def run_evaluation2():
     print(f"\n✅ Evaluation saved to: {OUTPUT_PATH}")
 
 
-# In[120]:
+# In[ ]:
 
 
 #run_evaluation2()

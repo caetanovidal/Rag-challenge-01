@@ -55,6 +55,7 @@ Question:
                 "route": route,
                 "attempts": attempt + 1,
                 "retried": attempt > 0,
+                "context": context,
                 "sources": [
                     f"{d.metadata['doc_name']}#page={d.metadata.get('page_label')}"
                     for d in selected_docs
@@ -78,6 +79,7 @@ Question:
         "route": route,
         "attempts": max_retries + 1,
         "retried": True,
+        "context": context,
         "sources": [
             f"{d.metadata['doc_name']}#page={d.metadata.get('page_label')}"
             for d in selected_docs
