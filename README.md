@@ -101,5 +101,7 @@ Generate: With the best 2–3 chunks, generate the answer and return it to the u
 
 Fallback: In case the response is "Not found in the document", rewrite the user question and try again using a BM25 search instead of semantic search.
 
-Resume: I learned a lot about RAG in the last week. I tried to create a simple RAG with indexing, routing, query translation, retrieval, and generation.
+**Next Steps**: The next steps would be adding LangGraph and transforming every function into a node or tool to create a more robust and modular agentic workflow.
+
+**Resume**: I learned a lot about RAG in the last week. I tried to create a simple RAG with indexing, routing, query translation, retrieval, and generation.
 
