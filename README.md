@@ -82,4 +82,24 @@ http://localhost:8501/
 
 
 
-Inside performance you can find a excel file comparing my model against the ground truth question by question
+
+## Inside performance folder you can find a excel file comparing my model against the ground truth question by question
+
+
+
+# My intuition / logic behind the code
+
+Initialize the vector store using indexing, embeddings, and adding metadata with the document name to allow routing to one document or another in the future.
+
+Routing: Given the user question, filter which document is best to retrieve chunks from: Standard or Health Plus.
+
+Query translation: Use multi-query to expand the user query into 4–5 queries, allowing retrieval of more chunks and more context.
+
+Retrieving: Use the multi-query to retrieve around 50 chunks, then apply filtering and thresholding to get the best 2–3 chunks.
+
+Generate: With the best 2–3 chunks, generate the answer and return it to the user.
+
+Fallback: In case the response is "Not found in the document", rewrite the user question and try again using a BM25 search instead of semantic search.
+
+Resume: I learned a lot about RAG in the last week. I tried to create a simple RAG with indexing, routing, query translation, retrieval, and generation.
+
