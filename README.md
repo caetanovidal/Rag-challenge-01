@@ -103,8 +103,6 @@ Fallback: In case the response is "Not found in the document", rewrite the user 
 
 **Next Steps**: The next steps would be adding LangGraph and transforming every function into a node or tool to create a more robust and modular agentic workflow.
 
-**Resume**: I learned a lot about RAG in the last week. I tried to create a simple RAG with indexing, routing, query translation, retrieval, and generation.
-
 
 
 # Performance File Explanation
