@@ -105,3 +105,10 @@ Fallback: In case the response is "Not found in the document", rewrite the user 
 
 **Resume**: I learned a lot about RAG in the last week. I tried to create a simple RAG with indexing, routing, query translation, retrieval, and generation.
 
+
+
+# Performance File Explanation
+
+Take all 30 questions and ask them to the LLM, analyze the answers against the ground truth using semantic similarity. If it is above 80% in similarity, the accuracy is marked as true. If it is using the same source, the groundedness is marked as true. As a result, my RAG had 90% accuracy and 90% groundedness.
+
+
